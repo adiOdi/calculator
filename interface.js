@@ -11,7 +11,7 @@ function newFormula(event) {
   updateFormDiv();
 }
 function updateForm(event) {
-  // if (event.keyCode != 13) return;
+  if (event.keyCode != 13) return;
   const newForm = event.target.value;
   const key = event.target.name;
   if (newForm == "") {
@@ -31,7 +31,7 @@ function newVar(event) {
   updateFormDiv();
 }
 function changeVar(event) {
-  // if (event.keyCode != 13) return;
+  if (event.keyCode != 13) return;
   const newVar = event.target.value;
   const key = event.target.name;
   if (newVar == "") {
@@ -56,12 +56,12 @@ function decreaseVar(event) {
   updateFormDiv();
 }
 function changeVarName(event) {
-  // if (event.keyCode != 13) return;
+  if (event.keyCode != 13) return;
   varNames.set(event.target.name, event.target.value);
   updateVarDiv();
 }
 function changeFormName(event) {
-  // if (event.keyCode != 13) return;
+  if (event.keyCode != 13) return;
   formNames.set(event.target.name, event.target.value);
   updateFormDiv();
 }
