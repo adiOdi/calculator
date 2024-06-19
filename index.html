@@ -15,17 +15,12 @@
   <body>
     <h3>Variables</h3>
     <label for="var">enter new variable:</label>
-    <input type="text" onkeydown="newVar(event)" id="var" name="var" />
+    <input type="text" onblur="newVar(event)" id="var" name="var" />
     <br /><br />
     <div id="variables"></div>
     <h3>Formulas</h3>
     <label for="formula">enter new formula:</label>
-    <input
-      type="text"
-      onkeydown="newFormula(event)"
-      id="formula"
-      name="formula"
-    />
+    <input type="text" onblur="newFormula(event)" id="formula" name="formula" />
     <br /><br />
     <div id="formulas"></div>
     <script src="interface.js"></script>

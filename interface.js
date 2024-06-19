@@ -1,6 +1,6 @@
 let formulaField = document.getElementById("formula");
 function newFormula(event) {
-  if (event.keyCode != 13) return;
+  // if (event.keyCode != 13) return;
   let newKey = 0;
   while (formulas.has(newKey + "")) {
     newKey++;
@@ -11,7 +11,7 @@ function newFormula(event) {
   updateFormDiv();
 }
 function updateForm(event) {
-  if (event.keyCode != 13) return;
+  // if (event.keyCode != 13) return;
   const newForm = event.target.value;
   const key = event.target.name;
   if (newForm == "") {
@@ -22,7 +22,7 @@ function updateForm(event) {
 }
 let varField = document.getElementById("var");
 function newVar(event) {
-  if (event.keyCode != 13) return;
+  // if (event.keyCode != 13) return;
   if (varField.value == "") return;
   variables.set(varField.value, 0);
   varNames.set(varField.value, "new variable");
@@ -31,7 +31,7 @@ function newVar(event) {
   updateFormDiv();
 }
 function changeVar(event) {
-  if (event.keyCode != 13) return;
+  // if (event.keyCode != 13) return;
   const newVar = event.target.value;
   const key = event.target.name;
   if (newVar == "") {
@@ -56,12 +56,12 @@ function decreaseVar(event) {
   updateFormDiv();
 }
 function changeVarName(event) {
-  if (event.keyCode != 13) return;
+  // if (event.keyCode != 13) return;
   varNames.set(event.target.name, event.target.value);
   updateVarDiv();
 }
 function changeFormName(event) {
-  if (event.keyCode != 13) return;
+  // if (event.keyCode != 13) return;
   formNames.set(event.target.name, event.target.value);
   updateFormDiv();
 }
@@ -80,7 +80,7 @@ function updateVarDiv() {
     const div = document.createElement("div");
     const name = document.createElement("input");
     name.type = "text";
-    name.addEventListener("keydown", changeVarName);
+    name.addEventListener("blur", changeVarName);
     name.value = varNames.get(key);
     name.name = key;
     div.appendChild(name);
@@ -90,7 +90,7 @@ function updateVarDiv() {
     div.appendChild(label);
     const input = document.createElement("input");
     input.type = "text";
-    input.addEventListener("keydown", changeVar);
+    input.addEventListener("blur", changeVar);
     input.value = value;
     input.name = key;
     input.id = key;
@@ -124,13 +124,13 @@ function updateFormDiv() {
     const div = document.createElement("div");
     const name = document.createElement("input");
     name.type = "text";
-    name.addEventListener("keydown", changeFormName);
+    name.addEventListener("blur", changeFormName);
     name.value = formNames.get(key);
     name.name = key;
     div.appendChild(name);
     const input = document.createElement("input");
     input.type = "text";
-    input.addEventListener("keydown", updateForm);
+    input.addEventListener("blur", updateForm);
     input.value = value;
     input.name = key;
     div.appendChild(input);
