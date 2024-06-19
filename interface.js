@@ -137,7 +137,7 @@ function updateFormDiv() {
     input.name = key;
     div.appendChild(input);
     const res = document.createElement("label");
-    res.innerText = " = " + calculate(value);
+    res.innerText = " = " + Math.round(calculate(value) * 10000) / 10000;
     res.for = key;
     div.appendChild(res);
     formDiv.appendChild(div);
