@@ -43,14 +43,14 @@ function changeVar(event) {
 }
 function increaseVar(event) {
   const input = document.getElementById(event.target.name);
-  let value = variables.get(input.name) + 1;
+  let value = parseFloat(variables.get(input.name)) + 1;
   input.value = value;
   variables.set(input.name, value);
   updateFormDiv();
 }
 function decreaseVar(event) {
   const input = document.getElementById(event.target.name);
-  let value = variables.get(input.name) - 1;
+  let value = parseFloat(variables.get(input.name)) - 1;
   input.value = value;
   variables.set(input.name, value);
   updateFormDiv();
