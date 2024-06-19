@@ -37,7 +37,7 @@ function changeVar(event) {
   if (newVar == "") {
     variables.delete(key);
     varNames.delete(key);
-  } else variables.set(key, newVar);
+  } else variables.set(key, eval(newVar));
   updateVarDiv();
   updateFormDiv();
 }
