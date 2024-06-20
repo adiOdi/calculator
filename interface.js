@@ -1,6 +1,7 @@
 let formulaField = document.getElementById("formula");
 function newFormula(event) {
-  if (event.keyCode != 13) return;
+  // if (!(event.keyCode == 13 || event.keyCode == 9)) return;
+  if (formulaField.value == "") return;
   let newKey = 0;
   while (formulas.has(newKey + "")) {
     newKey++;
@@ -22,7 +23,7 @@ function updateForm(event) {
 }
 let varField = document.getElementById("var");
 function newVar(event) {
-  if (event.keyCode != 13) return;
+  // if (!(event.keyCode == 13 || event.keyCode == 9)) return;
   if (varField.value == "") return;
   variables.set(varField.value, 0);
   varNames.set(varField.value, "new variable");
