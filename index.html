@@ -3,24 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calculator</title>
     <script src="calc.js"></script>
     <style>
+      * {
+        font-family: "Courier New", monospace;
+      }
+      .mono {
+        /* font-family: "Courier New", monospace; */
+        text-align: end;
+      }
+      .name {
+        text-align: center;
+      }
       button {
         width: 2em;
         height: 2em;
+        text-align: center !important;
       }
     </style>
   </head>
   <body>
     <h3>Variables</h3>
     <label for="var">enter new variable:</label>
-    <input type="text" onblur="newVar(event)" id="var" name="var" />
+    <input
+      type="text"
+      class="mono"
+      onkeyup="newVar(event)"
+      id="var"
+      name="var"
+    />
     <br /><br />
     <div id="variables"></div>
     <h3>Formulas</h3>
     <label for="formula">enter new formula:</label>
-    <input type="text" onblur="newFormula(event)" id="formula" name="formula" />
+    <input
+      type="text"
+      class="mono"
+      onkeyup="newFormula(event)"
+      id="formula"
+      name="formula"
+    />
     <br /><br />
     <div id="formulas"></div>
     <script src="interface.js"></script>
