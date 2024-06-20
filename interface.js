@@ -1,6 +1,6 @@
 let formulaField = document.getElementById("formula");
 function newFormula(event) {
-  // if (event.keyCode != 13) return;
+  if (event.keyCode != 13) return;
   let newKey = 0;
   while (formulas.has(newKey + "")) {
     newKey++;
@@ -22,7 +22,7 @@ function updateForm(event) {
 }
 let varField = document.getElementById("var");
 function newVar(event) {
-  // if (event.keyCode != 13) return;
+  if (event.keyCode != 13) return;
   if (varField.value == "") return;
   variables.set(varField.value, 0);
   varNames.set(varField.value, "new variable");
@@ -82,6 +82,7 @@ function updateVarDiv() {
     name.type = "text";
     name.addEventListener("blur", changeVarName);
     name.value = varNames.get(key);
+    name.className = "name";
     name.name = key;
     div.appendChild(name);
     const label = document.createElement("label");
@@ -91,17 +92,20 @@ function updateVarDiv() {
     const input = document.createElement("input");
     input.type = "text";
     input.addEventListener("blur", changeVar);
+    input.className = "mono";
     input.value = value;
     input.name = key;
     input.id = key;
     div.appendChild(input);
     const btnadd = document.createElement("button");
     btnadd.innerText = "+";
+    btnadd.className = "mono";
     btnadd.name = key;
     btnadd.addEventListener("click", increaseVar);
     div.appendChild(btnadd);
     const btnsub = document.createElement("button");
     btnsub.innerText = "-";
+    btnsub.className = "mono";
     btnsub.name = key;
     btnsub.addEventListener("click", decreaseVar);
     div.appendChild(btnsub);
@@ -126,11 +130,13 @@ function updateFormDiv() {
     name.type = "text";
     name.addEventListener("blur", changeFormName);
     name.value = formNames.get(key);
+    name.className = "name";
     name.name = key;
     div.appendChild(name);
     const input = document.createElement("input");
     input.type = "text";
     input.addEventListener("blur", updateForm);
+    input.className = "mono";
     input.value = value;
     input.name = key;
     div.appendChild(input);
