@@ -24,9 +24,11 @@ function updateForm(event) {
 let varField = document.getElementById("var");
 function newVar(event) {
   // if (!(event.keyCode == 13 || event.keyCode == 9)) return;
-  if (varField.value == "") return;
-  variables.set(varField.value, 0);
-  varNames.set(varField.value, "new variable");
+  const name = varField.value;
+  if (name == "") return;
+  if (name.toUpperCase() == name.toLowerCase()) return;
+  variables.set(name, 0);
+  varNames.set(name, "new variable");
   varField.value = "";
   updateVarDiv();
   updateFormDiv();
